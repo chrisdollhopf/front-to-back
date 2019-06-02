@@ -17,6 +17,12 @@ app.get('/', (req, res) => res.send('API Running'));
 // put in our callback with (req, res) and then do a res.send('Api Running')
 // which will send data to the browser saying API Running
 
+// 9. Define routes
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/profile', require('./routes/api/profile'));
+app.use('/api/posts', require('./routes/api/posts'));
+
 const PORT = process.env.PORT || 5000;
 // 4.  put the port in a variable here which looks for environment variable
 // port to use because when we deploy to Heroku thats where it is going to
