@@ -12,6 +12,12 @@ const app = express(); // 2. initialise our app variable with express
 // 8.  Connect database:
 connectDB();
 
+// 10. Bring in bodyparser, it used to be that you had to install
+// bodyparser as a seperate package and bring it in and then
+// initialise it but now is actually included with express
+// Init Middlare - allows retrieval of the users body data.
+app.use(express.json({ extended: false }));
+
 app.get('/', (req, res) => res.send('API Running'));
 // 5.  do a single endpoint just to test with app.get request to ('/') and
 // put in our callback with (req, res) and then do a res.send('Api Running')
